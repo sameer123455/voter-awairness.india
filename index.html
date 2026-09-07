@@ -1,0 +1,775 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voter Awareness India</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background: #f5f7fa;
+            color: #222;
+        }
+
+        /* HEADER */
+        header {
+            background: white;
+            border-bottom: 4px solid #138808;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px 7%;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .logo-icon {
+            font-size: 42px;
+        }
+
+        .logo h1 {
+            color: #1b3c73;
+            font-size: 22px;
+        }
+
+        .logo p {
+            font-size: 12px;
+            color: #666;
+        }
+
+        nav a {
+            text-decoration: none;
+            margin-left: 20px;
+            color: #222;
+            font-weight: bold;
+        }
+
+        nav a:hover {
+            color: #138808;
+        }
+
+        /* FLAG */
+        .flag {
+            height: 9px;
+            background: linear-gradient(
+                to bottom,
+                #ff9933 33%,
+                white 33%,
+                white 66%,
+                #138808 66%
+            );
+        }
+
+        /* HERO */
+        .hero {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 60px 20px;
+
+            background:
+                linear-gradient(
+                    rgba(0, 32, 70, 0.75),
+                    rgba(0, 32, 70, 0.75)
+                ),
+                url("https://images.unsplash.com/photo-1529107386315-e1a2ed48a620?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+            color: white;
+        }
+
+        .hero-content {
+            max-width: 850px;
+        }
+
+        .hero h2 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        .hero p {
+            font-size: 20px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 14px 25px;
+            background: #ff9933;
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            margin: 5px;
+            font-weight: bold;
+        }
+
+        .btn.green {
+            background: #138808;
+        }
+
+        .btn:hover {
+            opacity: 0.85;
+        }
+
+        /* SECTIONS */
+        section {
+            padding: 60px 7%;
+        }
+
+        .section-title {
+            text-align: center;
+            color: #1b3c73;
+            font-size: 32px;
+            margin-bottom: 15px;
+        }
+
+        .section-description {
+            text-align: center;
+            max-width: 750px;
+            margin: auto;
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 40px;
+        }
+
+        /* CARDS */
+        .cards {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-6px);
+        }
+
+        .card-icon {
+            font-size: 45px;
+            margin-bottom: 15px;
+        }
+
+        .card h3 {
+            color: #1b3c73;
+            margin-bottom: 12px;
+        }
+
+        .card p {
+            color: #666;
+            line-height: 1.5;
+        }
+
+        /* STEPS */
+        .steps {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+        }
+
+        .step {
+            background: white;
+            padding: 25px;
+            border-left: 5px solid #ff9933;
+            border-radius: 8px;
+        }
+
+        .number {
+            display: inline-flex;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            background: #138808;
+            color: white;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        /* SERVICES */
+        .services {
+            background: #eef4f8;
+        }
+
+        /* ALERT */
+        .notice {
+            background: #fff3cd;
+            border-left: 6px solid #ff9933;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+            line-height: 1.6;
+        }
+
+        /* FOOTER */
+        footer {
+            background: #172b4d;
+            color: white;
+            padding: 40px 7%;
+        }
+
+        .footer-grid {
+            display: grid;
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+            gap: 30px;
+        }
+
+        footer h3 {
+            margin-bottom: 15px;
+        }
+
+        footer p,
+        footer a {
+            color: #ddd;
+            line-height: 1.8;
+            text-decoration: none;
+        }
+
+        .copyright {
+            text-align: center;
+            border-top: 1px solid #52627a;
+            margin-top: 30px;
+            padding-top: 20px;
+        }
+
+        /* MOBILE */
+        @media(max-width: 700px) {
+
+            .topbar {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            nav a {
+                margin: 5px;
+                font-size: 13px;
+            }
+
+            .hero h2 {
+                font-size: 34px;
+            }
+
+            .hero p {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+
+    <div class="topbar">
+
+        <div class="logo">
+            <div class="logo-icon">🗳️</div>
+
+            <div>
+                <h1>Voter Awareness India</h1>
+                <p>Know Your Vote • Know Your Rights</p>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#services">Services</a>
+            <a href="#guide">Guide</a>
+            <a href="#about">About</a>
+        </nav>
+
+    </div>
+
+    <div class="flag"></div>
+
+</header>
+
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+        <h2>Your Vote. Your Voice. Your Democracy.</h2>
+
+        <p>
+            Learn how to register as a voter, update your electoral
+            information, understand your voting rights and participate
+            responsibly in India's democratic process.
+        </p>
+
+        <a
+            class="btn"
+            href="https://voters.eci.gov.in/"
+            target="_blank"
+        >
+            Official Voter Services
+        </a>
+
+        <a
+            class="btn green"
+            href="#guide"
+        >
+            Learn How to Vote
+        </a>
+
+    </div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+    <h2 class="section-title">
+        Why Voter Awareness Matters
+    </h2>
+
+    <p class="section-description">
+
+        A healthy democracy depends on informed citizens.
+        Understanding voter registration, electoral rolls and
+        voting procedures helps citizens participate effectively
+        in elections.
+
+    </p>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">🗳️</div>
+
+            <h3>Know Your Vote</h3>
+
+            <p>
+                Understand the importance of your vote and participate
+                responsibly in elections.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">📋</div>
+
+            <h3>Electoral Roll</h3>
+
+            <p>
+                Learn about voter registration and checking your
+                electoral-roll information.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🔐</div>
+
+            <h3>Verify Information</h3>
+
+            <p>
+                Keep your voter information accurate and up to date.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🇮🇳</div>
+
+            <h3>Responsible Citizen</h3>
+
+            <p>
+                Make informed decisions and respect the democratic
+                process.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+    <h2 class="section-title">
+        Voter Services
+    </h2>
+
+    <p class="section-description">
+        Information about common electoral services.
+    </p>
+
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">📝</div>
+
+            <h3>New Voter Registration</h3>
+
+            <p>
+                Learn about the process for eligible citizens
+                to register as voters.
+            </p>
+
+            <br>
+
+            <a
+                class="btn"
+                href="https://voters.eci.gov.in/"
+                target="_blank"
+            >
+                Official Portal
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">✏️</div>
+
+            <h3>Correction / Update</h3>
+
+            <p>
+                Learn about updating or correcting information
+                in electoral records.
+            </p>
+
+            <br>
+
+            <a
+                class="btn"
+                href="https://voters.eci.gov.in/"
+                target="_blank"
+            >
+                Official Portal
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🔍</div>
+
+            <h3>Search Electoral Roll</h3>
+
+            <p>
+                Use the official voter services portal to access
+                available voter-related services.
+            </p>
+
+            <br>
+
+            <a
+                class="btn"
+                href="https://electoralsearch.eci.gov.in/"
+                target="_blank"
+            >
+                Search
+            </a>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">📞</div>
+
+            <h3>Voter Helpline</h3>
+
+            <p>
+                For assistance with voter services, use official
+                Election Commission channels.
+            </p>
+
+            <br>
+
+            <a
+                class="btn"
+                href="https://eci.gov.in/"
+                target="_blank"
+            >
+                ECI Website
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- GUIDE -->
+
+<section id="guide">
+
+    <h2 class="section-title">
+        How to Become a Voter
+    </h2>
+
+    <p class="section-description">
+        General overview of the voter-registration journey.
+        Always verify current requirements on the official portal.
+    </p>
+
+
+    <div class="steps">
+
+        <div class="step">
+
+            <span class="number">1</span>
+
+            <h3>Check Eligibility</h3>
+
+            <p>
+                Check whether you meet the current eligibility
+                requirements for voter registration.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <span class="number">2</span>
+
+            <h3>Apply</h3>
+
+            <p>
+                Use the official Election Commission voter-services
+                portal for the applicable application.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <span class="number">3</span>
+
+            <h3>Submit Information</h3>
+
+            <p>
+                Provide the required information and documents
+                through the official process.
+            </p>
+
+        </div>
+
+
+        <div class="step">
+
+            <span class="number">4</span>
+
+            <h3>Track Status</h3>
+
+            <p>
+                Check the status of your application using
+                official voter services.
+            </p>
+
+        </div>
+
+    </div>
+
+
+    <div class="notice">
+
+        <strong>⚠️ Important:</strong>
+
+        This website is an educational voter-awareness project.
+        It is not affiliated with or operated by the Election
+        Commission of India. Do not enter personal information
+        on unofficial websites.
+
+    </div>
+
+</section>
+
+
+<!-- VOTING TIPS -->
+
+<section>
+
+    <h2 class="section-title">
+        Responsible Voting
+    </h2>
+
+    <div class="cards">
+
+        <div class="card">
+
+            <div class="card-icon">📚</div>
+
+            <h3>Stay Informed</h3>
+
+            <p>
+                Check reliable and official information before
+                making electoral decisions.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🚫</div>
+
+            <h3>Reject Misinformation</h3>
+
+            <p>
+                Verify election-related claims before sharing
+                them with others.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🤝</div>
+
+            <h3>Respect Others</h3>
+
+            <p>
+                Respect different opinions and participate
+                peacefully in the democratic process.
+            </p>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="card-icon">🇮🇳</div>
+
+            <h3>Participate</h3>
+
+            <p>
+                Encourage eligible citizens to learn about
+                the electoral process.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+    <div class="footer-grid">
+
+        <div>
+
+            <h3>Voter Awareness India</h3>
+
+            <p>
+                An educational project designed to promote
+                awareness about electoral participation.
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Official Resources</h3>
+
+            <p>
+                <a
+                    href="https://eci.gov.in/"
+                    target="_blank"
+                >
+                    Election Commission of India
+                </a>
+            </p>
+
+            <p>
+                <a
+                    href="https://voters.eci.gov.in/"
+                    target="_blank"
+                >
+                    Voter Services Portal
+                </a>
+            </p>
+
+        </div>
+
+
+        <div>
+
+            <h3>Quick Links</h3>
+
+            <p><a href="#home">Home</a></p>
+            <p><a href="#services">Services</a></p>
+            <p><a href="#guide">Voter Guide</a></p>
+            <p><a href="#about">About</a></p>
+
+        </div>
+
+    </div>
+
+
+    <div class="copyright">
+
+        © 2026 Voter Awareness India | Educational Project
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
